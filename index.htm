@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>FUDGE Dice Roller</title>
+   <link rel="stylesheet" href="animate.wobble.min.css">
+
+   <!-- Allow web app to be run in full-screen mode. -->
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <!-- Make the app title different than the page title. -->
+   <meta name="apple-mobile-web-app-title" content="FUDGE Dice Roller">
+   <!-- Configure the status bar. -->
+   <meta name="apple-mobile-web-app-status-bar-style" content="white">
+   <!-- Set the viewport. -->
+   <meta name="viewport" content="initial-scale=1">
+   <!-- For non-Retina (@1× display) iPhone, iPod Touch, and Android 2.1+ devices: -->
+   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"><!-- 57×57px -->
+   <!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+   <!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+   <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png">
+   <!-- For iPhone with @2× display running iOS ≤ 6: -->
+   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+   <!-- For iPhone with @2× display running iOS ≥ 7: -->
+   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+   <!-- For iPad with @2× display running iOS ≤ 6: -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+   <!-- For iPad with @2× display running iOS ≥ 7: -->
+   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png">
+   <!-- For iPhone 6 Plus with @3× display: -->
+   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon-180x180-precomposed.png">
+ 
+</head>
+<body>
+
+<style>
+#panda {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -moz-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+   -moz-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   flex-wrap: wrap;
+}
+.die {
+   display: inline-block;
+   margin: 3px;
+   cursor: pointer;
+}
+#status {
+   text-align: center;
+   font-family: sans-serif;
+}
+.blue rect, .blue path {fill: #036;}
+</style>
+
+<div id="panda"><div id="diceSet"><div id="die1" class="die blue"></div><div id="die2" class="die blue"></div><br><div id="die3" class="die blue"></div><div id="die4" class="die blue"></div></div></div>
+
+<script src="jquery.stripped.min.js"></script>
+<script src="fastclick.min.js"></script>
+<script src="shake.min.js"></script>
+<script type="text/javascript">
+$(function() { FastClick.attach(document.body); });
+function rollDice() {
+   if ($('#diceSet').hasClass('shakeMe')) {$('#diceSet').animateCss('wobble');}
+   $('.die').each(function() {
+      tVal = Math.floor(Math.random() * 3);
+      switch (tVal) {
+         case 0:
+            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><path d="m-331.07144 341.64792c-12.465 0-22.5 10.035-22.5 22.5l0 85c0 12.465 10.035 22.5 22.5 22.5l85 0c12.465 0 22.5-10.035 22.5-22.5l0-85c0-12.465-10.035-22.5-22.5-22.5l-85 0zm-11.42968 54.19727 107.85742 0 0 21.60546-107.85742 0 0-21.60546z" fill="#000"/></g></svg>');
+            break;
+         case 1:
+            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><rect width="130" height="130" x="-353.57144" y="341.64792" ry="22.5" fill="#000"/></g></svg>');
+            break;
+         case 2:
+            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><path d="m-331.07144 341.64792c-12.465 0-22.5 10.035-22.5 22.5l0 85c0 12.465 10.035 22.5 22.5 22.5l85 0c12.465 0 22.5-10.035 22.5-22.5l0-85c0-12.465-10.035-22.5-22.5-22.5l-85 0zm31.69726 11.07226 21.60743 0 0 43.125 43.125 0 0 21.60743-43.125 0 0 43.125-21.60743 0 0-43.125-43.125 0 0-21.60743 43.125 0 0-43.125z" fill="#000"/></g></svg>');
+            break;
+      }
+   });
+}
+
+$.fn.extend({
+   animateCss: function (animationName) {
+      var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+      $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+         $(this).removeClass('animated ' + animationName);
+      });
+   }
+});
+
+$(document).ready(function(){
+   rollDice();
+   $('#diceSet').addClass('shakeMe');
+   $('.die').click(function(){rollDice()});
+});
+
+var myShakeEvent = new Shake({
+    threshold: 15, // optional shake strength threshold
+    timeout: 1000 // optional, determines the frequency of event generation
+});
+myShakeEvent.start();
+window.addEventListener('shake', rollDice, false);
+</script>
+
+</body>
+</html>
