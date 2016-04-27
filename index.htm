@@ -69,10 +69,9 @@
    text-align: center;
    font-family: sans-serif;
 }
-.blue rect, .blue path {fill: #036;}
 </style>
 
-<div id="panda"><div id="diceSet"><div id="die1" class="die blue"></div><div id="die2" class="die blue"></div><br><div id="die3" class="die blue"></div><div id="die4" class="die blue"></div></div></div>
+<div id="panda"><div id="diceSet"><div id="die1" class="die"></div><div id="die2" class="die"></div><br><div id="die3" class="die"></div><div id="die4" class="die"></div></div></div>
 
 <script src="jquery.stripped.min.js"></script>
 <script src="fastclick.min.js"></script>
@@ -85,13 +84,13 @@ function rollDice() {
       tVal = Math.floor(Math.random() * 3);
       switch (tVal) {
          case 0:
-            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><path d="m-331.07144 341.64792c-12.465 0-22.5 10.035-22.5 22.5l0 85c0 12.465 10.035 22.5 22.5 22.5l85 0c12.465 0 22.5-10.035 22.5-22.5l0-85c0-12.465-10.035-22.5-22.5-22.5l-85 0zm-11.42968 54.19727 107.85742 0 0 21.60546-107.85742 0 0-21.60546z" fill="#000"/></g></svg>');
+				$(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130" version="1"><rect width="130" height="130" x="0" y="0" ry="22" fill="#036"/><rect width="100" height="22" x="15" y="54" ry="0" fill="#fff"/></svg>');
             break;
          case 1:
-            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><rect width="130" height="130" x="-353.57144" y="341.64792" ry="22.5" fill="#000"/></g></svg>');
+				$(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130" version="1"><rect width="130" height="130" x="0" y="0" ry="22" fill="#036"/></svg>');
             break;
          case 2:
-            $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="36.688889mm" height="36.688889mm" viewBox="0 0 130 130" version="1.1"><g transform="translate(353.57144,-341.64792)"><path d="m-331.07144 341.64792c-12.465 0-22.5 10.035-22.5 22.5l0 85c0 12.465 10.035 22.5 22.5 22.5l85 0c12.465 0 22.5-10.035 22.5-22.5l0-85c0-12.465-10.035-22.5-22.5-22.5l-85 0zm31.69726 11.07226 21.60743 0 0 43.125 43.125 0 0 21.60743-43.125 0 0 43.125-21.60743 0 0-43.125-43.125 0 0-21.60743 43.125 0 0-43.125z" fill="#000"/></g></svg>');
+			   $(this).html('<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130" version="1"><rect width="130" height="130" x="0" y="0" ry="22" fill="#036"/><rect width="100" height="22" x="15" y="54" ry="0" fill="#fff"/><rect width="22" height="100" x="54" y="15" ry="0" fill="#fff"/></svg>');
             break;
       }
    });
