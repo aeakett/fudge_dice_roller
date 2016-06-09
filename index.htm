@@ -73,7 +73,6 @@
 
 <div id="panda"><div id="diceSet"><div id="die1" class="die"></div><div id="die2" class="die"></div><br><div id="die3" class="die"></div><div id="die4" class="die"></div></div></div>
 
-<!--<script src="jquery.stripped.min.js"></script>-->
 <script src="zepto.min.js"></script>
 <script src="fastclick.min.js"></script>
 <script src="shake.min.js"></script>
@@ -100,15 +99,6 @@ function rollDice() {
       }
    });
 }
-
-/*$.fn.extend({
-   animateCss: function (animationName) {
-      var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-      $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-         $(this).removeClass('animated ' + animationName);
-      });
-   }
-});*/
 
 $(document).ready(function(){
    rollDice();
